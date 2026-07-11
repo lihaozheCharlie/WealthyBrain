@@ -1,0 +1,4 @@
+interface:
+  display_name: "WealthBrain Stock Picker"
+  short_description: "结合外部技能与本地 wiki 知识生成股票推荐决策"
+  default_prompt: "使用 $wealthbrain-stock-picker 研究一只股票或股票池，并把推荐决策记录到 WealthBrain wiki。"

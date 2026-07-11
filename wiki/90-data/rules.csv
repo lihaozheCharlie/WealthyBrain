@@ -1,0 +1,2 @@
+rule_id,created_date,statement,scope,support_count,counterexample_count,status,rule_file,last_updated
+RULE-20260708-001,2026-07-08,"当标的上行赔率明确、主要下行风险可用tiny/small仓位和失效条件控制时，不应因为证据未完全闭环而机械给watch；应显式比较小仓位参与和完全等待的机会成本。",A股/港股/美股中短期和中期研究建议,0,0,testing,wiki/70-learning/rules-under-test/RULE-20260708-001_opportunity-cost-calibration.md,2026-07-08

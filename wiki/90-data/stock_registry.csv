@@ -1,0 +1,17 @@
+symbol,name,market,sector,stock_file,first_seen,last_reviewed,active_recommendation_count,last_price,last_price_date,status
+CBRS.US,Cerebras Systems,US,Semiconductors / AI Infrastructure,wiki/50-stocks/CBRS.US_Cerebras_Systems.md,2026-07-07,2026-07-10,1,198.53,2026-07-09,tracking
+002050.SZ,三花智控,A股,家电零部件 / 汽车热管理 / 机器人执行器,wiki/50-stocks/002050.SZ_三花智控.md,2026-07-07,2026-07-10,1,43.17,2026-07-10,tracking
+601689.SH,拓普集团,A股,汽车零部件 / 机器人执行器 / 热管理,wiki/50-stocks/601689.SH_拓普集团.md,2026-07-07,2026-07-10,1,56.35,2026-07-10,tracking
+688017.SH,绿的谐波,A股,谐波减速器 / 机器人核心零部件 / 自动化设备,wiki/50-stocks/688017.SH_绿的谐波.md,2026-07-08,2026-07-10,1,403.60,2026-07-10,tracking
+002594.SZ,比亚迪,A股,新能源汽车 / 动力电池 / 储能 / 电子部件,wiki/50-stocks/002594.SZ_比亚迪.md,2026-07-08,2026-07-10,1,87.99,2026-07-10,tracking
+688322.SH,奥比中光,A股,3D视觉感知 / 机器人视觉 / AI端侧硬件,wiki/50-stocks/688322.SH_奥比中光.md,2026-07-08,2026-07-10,1,124.66,2026-07-10,tracking
+603986.SH,兆易创新,A股,半导体 / 存储芯片 / MCU / 模拟芯片,wiki/50-stocks/603986.SH_兆易创新.md,2026-07-08,2026-07-10,1,680.00,2026-07-10,tracking
+600522.SH,中天科技,A股,通信设备 / 光纤光缆 / 海缆 / 智能电网 / 储能,wiki/50-stocks/600522.SH_中天科技.md,2026-07-08,2026-07-10,1,47.38,2026-07-10,tracking
+AVGO.US,Broadcom,US,Semiconductors / AI Infrastructure / Enterprise Software,wiki/50-stocks/AVGO.US_Broadcom.md,2026-07-09,2026-07-10,1,401.11,2026-07-09,tracking
+BRK.B.US,Berkshire Hathaway Class B,US,Insurance / Conglomerate / Financials,wiki/50-stocks/BRK.B.US_Berkshire_Hathaway_Class_B.md,2026-07-09,2026-07-10,1,495.45,2026-07-09,tracking
+MSFT.US,Microsoft,US,Software / Cloud / AI Platform,wiki/50-stocks/MSFT.US_Microsoft.md,2026-07-09,2026-07-10,1,384.36,2026-07-09,tracking
+GOOGL.US,Alphabet Class A,US,Internet / Advertising / Cloud / AI,wiki/50-stocks/GOOGL.US_Alphabet_Class_A.md,2026-07-09,2026-07-10,1,358.89,2026-07-09,tracking
+3896.HK,金山云,港股,云计算 / AI 算力 / 企业数字化,wiki/50-stocks/3896.HK_金山云.md,2026-07-10,2026-07-10,1,5.82,2026-07-10,tracking
+DAL.US,Delta Air Lines,US,Airlines / Travel / Loyalty,wiki/50-stocks/DAL.US_Delta_Air_Lines.md,2026-07-10,2026-07-10,1,89.00,2026-07-09,tracking
+AMZN.US,Amazon,US,E-commerce / Cloud / Advertising / AI Infrastructure,wiki/50-stocks/AMZN.US_Amazon.md,2026-07-10,2026-07-10,1,247.04,2026-07-09,tracking
+SPCX.US,SpaceX,US,Satellite Connectivity / Commercial Space / AI Infrastructure,wiki/50-stocks/SPCX.US_SpaceX.md,2026-07-10,2026-07-10,1,152.16,2026-07-09,tracking

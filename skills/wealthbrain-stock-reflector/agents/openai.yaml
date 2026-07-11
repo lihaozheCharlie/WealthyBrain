@@ -1,0 +1,4 @@
+interface:
+  display_name: "WealthBrain Stock Reflector"
+  short_description: "复盘历史股票建议并持续推动投资 wiki 知识进化"
+  default_prompt: "使用 $wealthbrain-stock-reflector 复盘历史股票推荐，计算收益，并更新 WealthBrain 投资 wiki。"
