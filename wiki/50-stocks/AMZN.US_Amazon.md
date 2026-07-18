@@ -4,9 +4,9 @@ name: Amazon
 market: US
 sector: E-commerce / Cloud / Advertising / AI Infrastructure
 first_seen: 2026-07-10
-last_reviewed: 2026-07-10
-last_price: 247.04
-last_price_date: 2026-07-09
+last_reviewed: 2026-07-18
+last_price: 247.23
+last_price_date: 2026-07-17
 status: tracking
 ---
 
@@ -23,16 +23,18 @@ status: tracking
 
 | 日期 | 决策 | 动作 | 参考价 | 状态 |
 | --- | --- | --- | ---: | --- |
-| 2026-07-10 | [[40-recommendations/decisions/2026-07-10_AMZN.US_DECISION]] | buy-candidate | 247.04 | open |
+| 2026-07-10 | [[40-recommendations/decisions/2026-07-10_AMZN.US_DECISION]] | buy-candidate | 247.04 | superseded |
+| 2026-07-18 | [[40-recommendations/decisions/2026-07-18_AMZN.US_DECISION]] | watch | 247.23 | open |
 
 ## 复盘历史
 
 | 日期 | 复盘 | 收益 | 结果 |
 | --- | --- | ---: | --- |
+| 2026-07-18 | [[60-reviews/batch/2026-07-18_ALL_RECOMMENDATIONS_REVIEW|REV-20260718-AMZN.US-001]] | +0.08% | 绝对持平、相对占优；等待财报 |
 
 ## 当前投资假设
 
-2026Q1 AWS、广告和零售利润改善支持中期基本面；短线只有 243-246 美元回踩企稳或开盘 30 分钟后站稳 248.50 美元才参与，跌破 238 美元失效。
+AWS、广告与零售利润可支撑中期增长；新的买点应建立在大盘企稳和 243-246 美元承接上，而不是沿用已经失效的短线动量条件。
 
 ## 已沉淀经验
 

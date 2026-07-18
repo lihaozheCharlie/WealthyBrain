@@ -1,35 +1,96 @@
 ---
 name: wealthbrain-tradingagents
-description: Use TradingAgents for multi-agent public-market stock, ETF, crypto, or cross-market research memos with fundamental, technical, news, sentiment, bull/bear, trader, and risk-management perspectives.
+description: "在 WealthBrain 中由当前 Codex 原生执行 TradingAgents 风格的多视角股票研究：核验基本面、技术面、新闻与情绪，形成多头/空头辩论、交易视角和组合风险约束。用于美股、港股、跨市场主题、复杂标的或需要高置信度审查的新决策；不依赖 TradingAgents 上游源码、外部 LLM API、本地大模型服务或其他智能体。"
 ---
 
-# WealthBrain TradingAgents Wrapper
+# WealthBrain Codex TradingAgents
 
-Use this wrapper when a decision needs multi-perspective debate, especially for US/HK stocks, ETFs, cross-market themes, or high-conviction recommendations.
+把 TradingAgents 的角色分工当作分析方法，由当前 Codex 在一次任务中顺序执行。不要调用或模拟不存在的外部运行时。
 
-## Source
+## 执行契约
 
-- Upstream: `https://github.com/TauricResearch/TradingAgents`
-- Local source: `/Users/lihaozhe/.codex/vendor/TradingAgents`
-- Checked on: 2026-07-07
-- License: Apache-2.0
+- 直接使用当前 Codex 已有的联网检索、网页读取、本地文件和计算能力。
+- 不要求克隆上游仓库，不导入 `tradingagents` Python 包，不检查 LLM API key，不连接本地模型服务。
+- 不调用外部智能体。基本面分析师、技术分析师、新闻/情绪分析师、多头、空头、交易员和组合经理都是当前 Codex 的分析视角。
+- 不把不同视角描述为“独立模型共识”或“外部 skill 证实”；它们属于 agent 判断，只有底层公开资料才是外部证据。
+- 如果用户明确要求运行上游 TradingAgents 程序，说明本 skill 只实现 Codex 原生流程，不要声称已经运行上游程序。
 
-## Workflow
+方法论参考：`https://github.com/TauricResearch/TradingAgents`（Apache-2.0）。本目录不包含或执行其源码。
 
-1. Read the upstream/local README before running commands if setup details are needed.
-2. Verify current prices, news, filings, macro context, and model/data credentials before relying on live conclusions.
-3. Use the smallest safe command or source-level import first; do not trigger broker/execution integrations.
-4. Extract these sections for the WealthBrain decision record:
-   - fundamentals analyst view
-   - sentiment/news view
-   - technical analyst view
-   - bull case and bear case
-   - trader action
-   - risk manager / portfolio manager constraints
-5. Save final decision and future review under `wiki/` according to `AGENTS.md`.
+## 必读上下文
 
-## Guardrails
+执行新推荐或当前动作判断前，读取：
 
-- Treat outputs as research, not personalized financial advice.
-- Never place trades or connect accounts.
-- If data or API keys are missing, record the limitation and use public data sources where possible.
+- `AGENTS.md`
+- `skills/wealthbrain-stock-picker/SKILL.md`
+- `skills/wealthbrain-stock-picker/references/decision_process.md`
+- `skills/wealthbrain-stock-picker/references/evidence_sources.md`
+- `wiki/10-policy/`、`wiki/20-methodology/`、`wiki/70-learning/` 中由 stock picker 指定的文件
+- 对应个股页和历史推荐记录（如果存在）
+
+## 工作流
+
+### 1. 确定研究边界
+
+明确股票代码、市场、研究日期、投资周期、基准指数和用户已给出的风险约束。代码或证券身份不确定时先核验，不要猜测。
+
+### 2. 建立事实底稿
+
+先收集事实，再形成角色观点。至少覆盖：
+
+- 截至绝对日期的价格、涨跌、成交和相对基准表现
+- 最新财报、监管文件、公司公告和业务变化
+- 行业、指数、利率、汇率或监管环境中与标的直接相关的因素
+- 近期催化剂、负面事件、市场情绪和重要未知项
+
+每项关键事实记录来源、数据日期和可信度。优先使用公司公告、交易所、监管文件和官方统计；时效性信息必须联网核验。缺失数据标记为“未知”，不得用角色推演填补。
+
+### 3. 顺序执行分析视角
+
+1. **基本面视角**：业务质量、增长来源、盈利与现金流、资产负债表、估值和会计风险。
+2. **市场/技术视角**：趋势、量价、波动、流动性、关键位置和相对强弱；没有可靠行情时不编造指标。
+3. **新闻/情绪视角**：公告和新闻的事实影响、催化剂、争议、预期差；把新闻事实与情绪推断分开。
+4. **行业/宏观视角**：竞争格局、周期位置、政策、利率、汇率和基准环境，仅保留与标的决策相关的因素。
+
+每个视角都输出“支持因素、反对因素、未知项”，不得只写单边结论。
+
+### 4. 执行多空辩论
+
+- **多头论点**：给出最强、可证伪的上涨逻辑、催化剂、时间窗口和成立条件。
+- **空头论点**：攻击多头论点，给出估值、基本面、技术面和事件风险下的失败路径。
+- **研究经理裁决**：逐项处理冲突，指出哪一方证据更强、哪些问题尚未解决，以及新增什么事实会改变结论。
+
+多空双方只能引用事实底稿，不得为了角色完整性创造新事实。
+
+### 5. 形成交易与组合约束
+
+给出 WealthBrain 允许的研究动作之一：
+
+- `buy-candidate`
+- `watch`
+- `hold`
+- `reduce`
+- `sell-candidate`
+- `avoid`
+
+同时给出置信度、研究周期、入场或等待条件、失效条件、复盘触发条件和仓位上限建议。核心事实不足或多空证据接近时使用 `watch`，不要硬凑买点。
+
+## 输出格式
+
+向 stock picker 返回一个“Codex 原生 TradingAgents 视角包”，至少包含：
+
+1. 执行模式：`codex-native`，并声明没有运行外部 TradingAgents 程序。
+2. 数据截止日期和已核验事实清单。
+3. 基本面、市场/技术、新闻/情绪、行业/宏观四个视角。
+4. 多头论点、空头论点和研究经理裁决。
+5. 交易动作、组合风险约束、失效条件和未知项。
+6. 关键来源及其日期。
+
+在决策记录中把本 skill 记为 `wealthbrain-tradingagents`。其角色观点归入“agent 判断”，不要归入“外部独立证据”。最终决策仍由 `$wealthbrain-stock-picker` 负责，并按其落盘契约写入 `wiki/`。
+
+## 约束
+
+- 只做研究，不下单、不连接券商、不提交交易。
+- 不因缺少外部 API key、本地模型或上游源码而跳过本流程。
+- 不把公开网页摘要当作已核验原始事实；关键结论尽量回到一手来源。
+- 不确定性高于证据强度时，明确给出等待条件。

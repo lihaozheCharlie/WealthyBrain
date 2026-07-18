@@ -12,7 +12,7 @@
 
 - 只做研究、记录、复盘和知识沉淀；不要自动下单、连接券商、提交交易或改动真实账户。
 - 涉及最新价格、新闻、财报、公告、监管、指数环境、利率、汇率时，必须查询实时或足够新的公开数据，并说明数据日期。
-- 输出必须区分事实、数据源、外部 skill 观点、agent 判断和未知项。
+- 输出必须区分事实、数据源、Codex 原生 skill 分析、agent 最终判断和未知项。Codex 原生 skill 的角色视角和派生指标不是独立外部证据。
 - 没有足够证据时给出“观察/等待条件”，不要硬凑买点。
 - 所有日期使用绝对日期。当前工程冷启日期为 2026-07-07，工作时以实际当前日期为准。
 - 每次推荐、复盘、经验沉淀都必须落盘到 `wiki/`，不要只停留在聊天里。
@@ -21,13 +21,13 @@
 
 ## 本地能力
 
-优先使用本工程冷启选定的三套外部能力：
+优先使用本工程冷启选定的三套专业能力：
 
-- `external-skills/tradingagents/SKILL.md`
-- `external-skills/daily-stock-analysis/SKILL.md`
-- `external-skills/myhhub-stock/SKILL.md`
+- `external-skills/tradingagents/SKILL.md`：由当前 Codex 原生执行，不依赖上游源码、外部 LLM API、本地模型或其他智能体。
+- `external-skills/daily-stock-analysis/SKILL.md`：由当前 Codex 原生生成日常决策看板，不依赖模型、搜索或行情 API key。
+- `external-skills/myhhub-stock/SKILL.md`：由当前 Codex 原生生成量化证据；本地脚本只使用 Python 标准库和已有 OHLCV 数据。
 
-外部能力只提供证据和视角，不直接替代最终判断。最终判断必须结合当前公开信息和 `wiki/` 中已经沉淀的方法论、复盘经验、检查清单。
+三套能力都由当前 Codex 执行，只提供派生证据或结构化分析视角，不直接替代最终判断。最终判断必须结合当前公开信息和 `wiki/` 中已经沉淀的方法论、复盘经验、检查清单。公开数据不可用时，应缩小分析范围、标记未知项并说明需要的输入，不得转向要求用户提供密钥的外部模型或数据服务。
 
 ## 文件约定
 

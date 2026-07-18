@@ -1,36 +1,86 @@
 ---
 name: wealthbrain-myhhub-stock
-description: Use myhhub/stock InStock for A-share and ETF indicators, chip distribution, K-line pattern recognition, comprehensive stock screening, strategy screening, and backtests.
+description: "在 WealthBrain 中由当前 Codex 原生生成 A 股和 ETF 的量化证据：核验行情与流动性、计算常用技术指标、识别可复核形态、执行小型规则筛选和无前视简单回测。用于单股技术检查、候选池比较和策略验证；不依赖 myhhub/stock 上游源码、外部模型、API key、TA-Lib、MySQL 或自动交易服务。"
 ---
 
-# WealthBrain myhhub/stock Wrapper
+# WealthBrain Codex Quant Evidence
 
-Use this wrapper for A 股 and ETF quantitative evidence: indicators, patterns, strategy screens, chip distribution, and backtesting.
+把 `myhhub/stock` 的指标、形态、筛选和回测思想改写为 Codex 可直接执行的量化证据流程。不要启动上游 InStock 系统。
 
-## Source
+## 执行契约
 
-- Upstream: `https://github.com/myhhub/stock`
-- Local source: `/Users/lihaozhe/.codex/vendor/myhhub-stock`
-- Local Codex skill: `/Users/lihaozhe/.codex/skills/myhhub_stock/SKILL.md`
-- Checked on: 2026-07-07
-- License: Apache-2.0
+- 使用当前 Codex 的联网检索、本地文件和计算能力，不克隆或导入上游项目。
+- 不请求行情 token、搜索 key 或模型 key，不连接本地模型，不调用其他智能体。
+- 不依赖 TA-Lib、pandas、MySQL、Docker、Cookie、代理池或券商接口。
+- 允许使用无需用户密钥的公开行情或用户提供的 CSV；记录来源、下载时间、复权方式和证券代码映射。
+- 数据不足时缩小分析范围并标记未知，不改用需要密钥的服务。
 
-## Best Fit
+方法论参考：`https://github.com/myhhub/stock`（Apache-2.0）。本目录不包含或执行其源码。
 
-- A 股/ETF 综合选股
-- 技术指标：MACD、KDJ、BOLL、RSI、CCI、ATR、OBV、SAR、Supertrend
-- 筹码分布/持仓成本
-- K 线形态识别
-- 策略筛选和回测
+## 数据契约
 
-## Workflow
+技术计算优先使用按交易日升序排列的 OHLCV 数据，字段为：
 
-1. Read config/database assumptions before running jobs that write data.
-2. Prefer narrow single-stock or single-strategy checks before full-market jobs.
-3. For recommendations, export only the relevant evidence into `wiki/40-recommendations/decisions/`.
-4. For reviews, compare original screened signal with later price behavior and record whether the signal decayed, persisted, or inverted.
+`date,open,high,low,close,volume`
 
-## Guardrails
+- 校验日期顺序、重复行、缺失值、价格非正数、`high/low` 关系和成交量异常。
+- 明确使用前复权、后复权还是不复权；跨除权日比较时不得混用。
+- 区分 WealthBrain 规范代码与数据源代码，例如 `600519.SH` 与公开源可能使用的 `600519.SS`。
+- 少于指标所需窗口时返回 `unavailable`。不要用短样本伪装 MA60、年线或 210 日筹码分布。
 
-- Do not start auto-trading services.
-- Do not run long full-market jobs unless the user asks for them or the local environment is clearly prepared.
+## 本地计算助手
+
+取得可靠 CSV 后运行：
+
+```bash
+python3 external-skills/myhhub-stock/scripts/quant_evidence.py \
+  --csv /absolute/path/to/ohlcv.csv \
+  --backtest
+```
+
+该脚本只使用 Python 标准库，不联网。它输出 SMA、MACD、RSI、BOLL、ATR、KDJ、OBV、量比、区间收益、回撤和一个以前一日信号持仓的均线交叉回测。脚本结果是量化证据，不是买卖指令。
+
+## 工作流
+
+### 1. 选择最小任务
+
+- 单股：计算与当前决策最相关的指标和形态。
+- 小型股票池：统一数据日期、窗口和复权方式后比较。
+- 策略验证：先写清规则、信号时点、持有方式、成本和基准，再回测。
+- 全市场扫描：仅在用户明确要求且已有完整数据时执行。
+
+### 2. 生成量化证据
+
+至少区分：
+
+- **趋势**：收盘价与 MA20/MA60、区间收益、相对基准表现。
+- **动量**：MACD、RSI、KDJ；阈值只表示状态，不直接等于买卖动作。
+- **波动与风险**：ATR、BOLL、最大回撤、流动性和成交异常。
+- **量价**：量比、OBV、突破是否放量；没有成交量时不做量价结论。
+- **形态**：只报告能由给定 OHLCV 明确定义并复核的形态，附规则和触发日期。
+
+### 3. 谨慎处理筹码与资金流
+
+- 只有可靠的流通盘、换手率和成交分布数据时才计算真实筹码/持仓成本分布。
+- 仅按成交量和价格分桶得到的结果必须标记为“成交量价格分布近似”，不得称为真实筹码分布。
+- 没有逐笔或权威资金流数据时，不推断主力净流入或机构行为。
+
+### 4. 筛选与回测纪律
+
+- 在运行前固定规则，避免看完结果后修改阈值。
+- 信号只能使用当时可见数据；最早在下一交易日持仓，禁止前视。
+- 报告样本区间、交易次数、基准收益、策略收益、最大回撤和是否计入成本。
+- 小样本、低交易次数、幸存者偏差或多重试验时降低证据等级。
+
+## 输出与落盘
+
+向 stock picker 返回“Codex 原生量化证据包”，至少包含数据来源与截止日期、复权方式、样本长度、指标结果、规则/形态、回测假设、限制和未知项。未来决策的 `source_skills` 使用 `wealthbrain-myhhub-stock`。
+
+量化证据只支持或反驳 thesis，不独立决定 `buy-candidate`。若形成新的动作判断，最终由 `$wealthbrain-stock-picker` 按落盘契约写入 `wiki/`。
+
+## 约束
+
+- 不启动自动交易、后台服务、数据库或全市场定时任务。
+- 不连接券商，不提交订单，不读取真实账户。
+- 不因缺少 API key、模型、数据库或上游源码而跳过可执行的单股/小池分析。
+- 无可靠历史数据时只列出所需输入，不编造指标、形态或回测结果。

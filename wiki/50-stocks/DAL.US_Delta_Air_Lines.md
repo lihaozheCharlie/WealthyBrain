@@ -4,9 +4,9 @@ name: Delta Air Lines
 market: US
 sector: Airlines / Travel / Loyalty
 first_seen: 2026-07-10
-last_reviewed: 2026-07-10
-last_price: 89.00
-last_price_date: 2026-07-09
+last_reviewed: 2026-07-18
+last_price: 84.17
+last_price_date: 2026-07-17
 status: tracking
 ---
 
@@ -23,16 +23,18 @@ status: tracking
 
 | 日期 | 决策 | 动作 | 参考价 | 状态 |
 | --- | --- | --- | ---: | --- |
-| 2026-07-10 | [[40-recommendations/decisions/2026-07-10_DAL.US_DECISION]] | buy-candidate | 89.00 | open |
+| 2026-07-10 | [[40-recommendations/decisions/2026-07-10_DAL.US_DECISION]] | buy-candidate | 89.00 | superseded |
+| 2026-07-18 | [[40-recommendations/decisions/2026-07-18_DAL.US_DECISION]] | watch | 84.17 | open |
 
 ## 复盘历史
 
 | 日期 | 复盘 | 收益 | 结果 |
 | --- | --- | ---: | --- |
+| 2026-07-18 | [[60-reviews/batch/2026-07-18_ALL_RECOMMENDATIONS_REVIEW|REV-20260718-DAL.US-001]] | -5.43% | 财报好但油价风险上升；等待 |
 
 ## 当前投资假设
 
-只有 2026-07-10 二季报和后续指引不弱、且开盘后站稳 89.55 美元，才把 DAL 视为 5-15 个交易日的事件驱动候选。油价急涨或跌破 87 美元使假设失效。
+高端客运、忠诚度与需求可支撑盈利，但只有油价稳定且价格重新确认，强财报才可转化为可执行短线。
 
 ## 已沉淀经验
 

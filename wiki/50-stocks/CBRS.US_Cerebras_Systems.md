@@ -4,9 +4,9 @@ name: Cerebras Systems
 market: US
 sector: 半导体 / AI 基础设施
 first_seen: 2026-07-07
-last_reviewed: 2026-07-10
-last_price: 198.53
-last_price_date: 2026-07-09
+last_reviewed: 2026-07-18
+last_price: 172.86
+last_price_date: 2026-07-17
 status: tracking
 ---
 
@@ -24,7 +24,8 @@ status: tracking
 | 日期 | 决策 | 动作 | 参考价 | 状态 |
 | --- | --- | --- | ---: | --- |
 | 2026-07-07 | [[40-recommendations/decisions/2026-07-07_CBRS.US_DECISION|DEC-20260707-CBRS.US-001]] | watch | 176.11 USD | superseded |
-| 2026-07-10 | [[40-recommendations/decisions/2026-07-10_CBRS.US_DECISION|DEC-20260710-CBRS.US-001]] | watch | 198.53 USD | open |
+| 2026-07-10 | [[40-recommendations/decisions/2026-07-10_CBRS.US_DECISION|DEC-20260710-CBRS.US-001]] | watch | 198.53 USD | superseded |
+| 2026-07-18 | [[40-recommendations/decisions/2026-07-18_CBRS.US_DECISION]] | watch | 172.86 | open |
 
 ## 复盘历史
 
@@ -32,10 +33,11 @@ status: tracking
 | --- | --- | ---: | --- |
 | 2026-07-09 | [[60-reviews/batch/2026-07-09_ALL_RECOMMENDATIONS_REVIEW|REV-20260709-CBRS.US-001]] | 3.19% | 短线转正；仍低于 IPO 价且待 Q2 验证 |
 | 2026-07-10 | [[60-reviews/batch/2026-07-10_ALL_RECOMMENDATIONS_REVIEW|REV-20260710-CBRS.US-001]] | 12.73% | 欧洲 200MW 扩张催化；盈利与客户集中仍待验证 |
+| 2026-07-18 | [[60-reviews/batch/2026-07-18_ALL_RECOMMENDATIONS_REVIEW|REV-20260718-CBRS.US-001]] | -12.93% | 高波动失效；降级观察 |
 
 ## 当前投资假设
 
-Cerebras 已于 2026-07-09 收到欧洲 200MW 扩张催化并收于 198.53，站上 185 美元 IPO 价；但盈利、客户集中、资本承诺和解禁风险未解决。等待 Q2/部署收入验证并优先观察 185-190 回踩，不追涨。
+晶圆级系统和低延迟推理的差异化需要由部署收入、毛利率与客户结构验证，不能只靠扩产公告。
 
 ## 已沉淀经验
 

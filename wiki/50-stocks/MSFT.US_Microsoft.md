@@ -4,9 +4,9 @@ name: Microsoft
 market: US
 sector: Software / Cloud / AI Platform
 first_seen: 2026-07-09
-last_reviewed: 2026-07-10
-last_price: 384.36
-last_price_date: 2026-07-09
+last_reviewed: 2026-07-18
+last_price: 393.82
+last_price_date: 2026-07-17
 status: tracking
 ---
 
@@ -24,17 +24,19 @@ status: tracking
 | 日期 | 决策 | 动作 | 参考价 | 状态 |
 | --- | --- | --- | ---: | --- |
 | 2026-07-09 | [[40-recommendations/decisions/2026-07-09_MSFT.US_DECISION]] | buy-candidate | 375.31 | superseded |
-| 2026-07-10 | [[40-recommendations/decisions/2026-07-10_MSFT.US_DECISION]] | buy-candidate | 384.36 | open |
+| 2026-07-10 | [[40-recommendations/decisions/2026-07-10_MSFT.US_DECISION]] | buy-candidate | 384.36 | superseded |
+| 2026-07-18 | [[40-recommendations/decisions/2026-07-18_MSFT.US_DECISION]] | buy-candidate | 393.82 | open |
 
 ## 复盘历史
 
 | 日期 | 复盘 | 收益 | 结果 |
 | --- | --- | ---: | --- |
 | 2026-07-10 | [[60-reviews/batch/2026-07-10_ALL_RECOMMENDATIONS_REVIEW|REV-20260710-MSFT.US-001]] | 2.41% | 跑赢 QQQ；保留一半额度到财报后 |
+| 2026-07-18 | [[60-reviews/batch/2026-07-18_ALL_RECOMMENDATIONS_REVIEW|REV-20260718-MSFT.US-001]] | +2.46% | 绝对与相对表现最佳；维持候选 |
 
 ## 当前投资假设
 
-MSFT 回撤后风险收益比仍可接受，2026-07-09 收 384.36 美元。若昨日未执行，380-385 只做首批；至少一半额度等 2026-07-29 财报，不能替代组合再平衡。
+Azure、Microsoft 365、GitHub 与企业转换成本可把 AI capex 转化为云收入和软件 ARPU；财报前仍要控制事件与组合科技集中度。
 
 ## 已沉淀经验
 

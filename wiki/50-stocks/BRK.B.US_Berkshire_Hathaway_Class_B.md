@@ -4,9 +4,9 @@ name: Berkshire Hathaway Class B
 market: US
 sector: Insurance / Conglomerate / Financials
 first_seen: 2026-07-09
-last_reviewed: 2026-07-10
-last_price: 495.45
-last_price_date: 2026-07-09
+last_reviewed: 2026-07-18
+last_price: 490.91
+last_price_date: 2026-07-17
 status: tracking
 ---
 
@@ -24,17 +24,19 @@ status: tracking
 | 日期 | 决策 | 动作 | 参考价 | 状态 |
 | --- | --- | --- | ---: | --- |
 | 2026-07-09 | [[40-recommendations/decisions/2026-07-09_BRK.B.US_DECISION]] | buy-candidate | 496.03 | superseded |
-| 2026-07-10 | [[40-recommendations/decisions/2026-07-10_BRK.B.US_DECISION]] | buy-candidate | 495.45 | open |
+| 2026-07-10 | [[40-recommendations/decisions/2026-07-10_BRK.B.US_DECISION]] | buy-candidate | 495.45 | superseded |
+| 2026-07-18 | [[40-recommendations/decisions/2026-07-18_BRK.B.US_DECISION]] | buy-candidate | 490.91 | open |
 
 ## 复盘历史
 
 | 日期 | 复盘 | 收益 | 结果 |
 | --- | --- | ---: | --- |
 | 2026-07-10 | [[60-reviews/batch/2026-07-10_ALL_RECOMMENDATIONS_REVIEW|REV-20260710-BRK.B.US-001]] | -0.12% | 仍在 490-505 买入区；组合角色未变 |
+| 2026-07-18 | [[60-reviews/batch/2026-07-18_ALL_RECOMMENDATIONS_REVIEW|REV-20260718-BRK.B.US-001]] | -0.92% | 防守属性有效；升级候选 |
 
 ## 当前投资假设
 
-在 AI/大盘科技集中组合中，BRK.B 提供现金流、防御和较低相关性。2026-07-09 收 495.45 美元，仍适合 490-505 分批建立 `small`；520 以上暂停，470-480 复核提高吸引力。
+保险浮存金、多元实业、现金与国债提供较低科技相关性和更可控回撤，目标是提高组合韧性而非追最高弹性。
 
 ## 已沉淀经验
 

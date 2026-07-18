@@ -5,8 +5,8 @@
 ## 目录
 
 - `AGENTS.md`: agent 必须遵守的工作协议。
-- `external-skills/`: 冷启选定的公开炒股/股票分析能力索引与本地 wrapper。
-- `skills/wealthbrain-stock-picker/`: 选股决策 skill，负责使用 external skills、外部信息和 wiki 知识生成推荐。
+- `external-skills/`: 冷启选定的公开股票分析方法论索引与 Codex 原生 wrapper。
+- `skills/wealthbrain-stock-picker/`: 选股决策 skill，负责使用专业分析 skill、当前公开信息和 wiki 知识生成推荐。
 - `skills/wealthbrain-stock-reflector/`: 复盘反思 skill，负责查询现价、计算收益、复盘建议、沉淀经验并升级 wiki。
 - `wiki/`: 投资政策、方法论、推荐记录、个股档案、复盘和经验库。
 - `wiki/90-data/`: 结构化索引表，方便以后统计和复盘。

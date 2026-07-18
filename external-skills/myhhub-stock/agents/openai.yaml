@@ -1,0 +1,4 @@
+interface:
+  display_name: "WealthBrain Quant Evidence"
+  short_description: "Codex 原生计算股票指标、量价证据与简单策略回测"
+  default_prompt: "使用 $wealthbrain-myhhub-stock 为目标股票或候选池生成可复算的量化证据。"

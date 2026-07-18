@@ -2,7 +2,7 @@
 
 冷启日期：2026-07-07。
 
-本目录不是盲目复制大型仓库，而是把公开热门能力整理成本工程可调用、可审计的 skill wrapper。热度与许可证通过 GitHub API 和公开技能目录检索核对。
+本目录不是盲目复制大型仓库，而是把公开热门能力整理成本工程可调用、可审计的 Codex 原生 skill wrapper。上游仓库只提供方法论参考，不作为运行依赖。热度与许可证通过 GitHub API 和公开技能目录检索核对。
 
 ## Active Top 3
 
@@ -25,4 +25,12 @@
 - `daily-stock-analysis/SKILL.md`
 - `myhhub-stock/SKILL.md`
 
-这些 wrapper 负责告诉未来 agent 何时使用对应能力、读取哪些本地源码路径、如何把输出映射到 `wiki/`。
+这些 wrapper 负责告诉未来 Codex 何时使用对应能力、如何用当前公开信息和本地计算执行，以及如何把输出映射到 `wiki/`。
+
+Active Top 3 均已改为 Codex 原生执行：
+
+- `tradingagents`：当前 Codex 顺序执行多视角分析与多空辩论。
+- `daily-stock-analysis`：当前 Codex 生成日常决策看板、事件摘要和市场复盘。
+- `myhhub-stock`：当前 Codex 组织量化证据，并可用纯 Python 标准库脚本计算已有 OHLCV 数据。
+
+三者都不需要本地上游源码、外部 LLM API key、本地模型服务或其他智能体。公开数据缺失时标记未知，不以收费 API 补洞。

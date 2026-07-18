@@ -4,9 +4,9 @@ name: SpaceX
 market: US
 sector: 卫星通信 / 商业航天 / AI 基础设施
 first_seen: 2026-07-10
-last_reviewed: 2026-07-10
-last_price: 152.16
-last_price_date: 2026-07-09
+last_reviewed: 2026-07-18
+last_price: 123.99
+last_price_date: 2026-07-17
 status: tracking
 ---
 
@@ -23,16 +23,18 @@ status: tracking
 
 | 日期 | 决策 | 动作 | 参考价 | 状态 |
 | --- | --- | --- | ---: | --- |
-| 2026-07-10 | [[40-recommendations/decisions/2026-07-10_SPCX.US_DECISION]] | watch | 152.16 USD | open |
+| 2026-07-10 | [[40-recommendations/decisions/2026-07-10_SPCX.US_DECISION]] | watch | 152.16 USD | superseded |
+| 2026-07-18 | [[40-recommendations/decisions/2026-07-18_SPCX.US_DECISION]] | avoid | 123.99 | open |
 
 ## 复盘历史
 
 | 日期 | 复盘 | 收益 | 结果 |
 | --- | --- | ---: | --- |
+| 2026-07-18 | [[60-reviews/batch/2026-07-18_ALL_RECOMMENDATIONS_REVIEW|REV-20260718-SPCX.US-001]] | -18.51% | 高估值代理资产失效；回避 |
 
 ## 当前投资假设
 
-Starlink 与 Falcon 已证明商业质量，Starship 可能打开 V3 星座、移动直连与轨道基础设施的价值上限；但约 2 万亿美元市值已隐含多条乐观路径。等待上市后季度财务、Starship 商业载荷与解禁后的价格发现，当前不追买。
+Falcon 与 Starlink 护城河真实，但集团现金消耗、AI 资本开支、并购、债务、治理和低流通盘供给决定股票赔率。公司质量不能替代价格和财务验证。
 
 ## 已沉淀经验
 

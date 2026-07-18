@@ -1,0 +1,4 @@
+interface:
+  display_name: "WealthBrain Daily Stock Analysis"
+  short_description: "Codex 原生生成股票日常看板、事件摘要与市场复盘"
+  default_prompt: "使用 $wealthbrain-daily-stock-analysis 为目标股票生成 Codex 原生日常决策看板。"

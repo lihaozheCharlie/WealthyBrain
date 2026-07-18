@@ -1,42 +1,78 @@
 ---
 name: wealthbrain-daily-stock-analysis
-description: Use daily_stock_analysis / stock_analyzer for multi-market stock dashboards, real-time news, sentiment scoring, operation advice, position suggestions, and market reviews.
+description: "在 WealthBrain 中由当前 Codex 原生生成单股或批量股票决策看板、新闻与情绪摘要、风险催化剂、行动计划和市场复盘。用于快速日常检查、事件驱动更新、股票池比较和大盘复盘；不依赖 daily_stock_analysis 上游源码、外部 LLM API、搜索 API key、本地模型或通知服务。"
 ---
 
-# WealthBrain Daily Stock Analysis Wrapper
+# WealthBrain Codex Daily Stock Analysis
 
-Use this wrapper for fast stock-level dashboards, news/sentiment checks, operation advice, and market review.
+把 `daily_stock_analysis` 的决策看板结构当作方法，由当前 Codex 直接执行。不要调用或模拟不存在的上游服务。
 
-## Source
+## 执行契约
 
-- Upstream: `https://github.com/ZhuLinsen/daily_stock_analysis`
-- Local source: `/Users/lihaozhe/.codex/vendor/daily_stock_analysis`
-- Local Codex skill: `/Users/lihaozhe/.codex/skills/stock_analyzer/SKILL.md`
-- Checked on: 2026-07-07
-- License: MIT
+- 使用当前 Codex 已有的联网检索、网页读取、本地文件和计算能力。
+- 不克隆或导入上游项目，不读取 `.env`，不检查或请求任何 LLM、搜索、行情或通知 API key。
+- 不连接本地模型，不调用其他智能体，不启动 Web 服务、定时任务或消息推送。
+- 允许读取无需用户密钥的公开网页和公开数据；不可用或受限时标记为“未知”，不要改用收费 API。
+- 如果用户明确要求运行上游程序，说明本 skill 只实现 Codex 原生流程，不要声称已经运行 `analyze_stock()` 或 `perform_market_review()`。
 
-## Capabilities To Reuse
+方法论参考：`https://github.com/ZhuLinsen/daily_stock_analysis`（MIT）。本目录不包含或执行其源码。
 
-- `analyze_stock(stock_code)`
-- `analyze_stocks(stock_codes)`
-- `perform_market_review()`
+## 必读上下文
 
-Key output areas to map into WealthBrain:
+形成推荐或动作判断前，读取 `AGENTS.md`、`skills/wealthbrain-stock-picker/SKILL.md` 及其指定的政策、方法论、经验和个股文件。市场复盘不产生个股动作时，只记录用户要求的复盘范围。
 
-- core conclusion
-- trend and price position
-- volume and chip/cost structure
-- news risks and positive catalysts
-- battle plan: entry/exit targets, position strategy, risk checklist
+## 任务模式
 
-## Workflow
+- **单股看板**：快速判断一只股票当前状态、事件变化和等待条件。
+- **批量比较**：使用一致字段比较一个小型股票池；先核验身份，再按证据完整度排序。
+- **市场复盘**：总结主要指数、行业强弱、广度、重要事件和下一交易日观察项。
 
-1. Inspect config and data-source readiness before running.
-2. Run narrow single-stock analysis before broad batch analysis.
-3. Cross-check important price/news facts with live sources.
-4. Save conclusions in the decision template; do not leave analysis only in chat.
+用户没有要求全市场扫描时，不要自行扩大到大批量标的。
 
-## Guardrails
+## 工作流
 
-- Do not send notifications or scheduled pushes unless explicitly requested.
-- Do not treat a single model score as sufficient evidence for a buy decision.
+### 1. 核验研究边界
+
+确认证券代码、名称、市场、货币、数据日期、研究周期和基准。代码或名称有歧义时先核验。
+
+### 2. 收集当前证据
+
+优先收集并标注绝对日期：
+
+- 最新可得价格、涨跌、成交、近期区间位置和相对基准表现
+- 最新财报、公司公告、交易所或监管披露
+- 近期新闻、事件催化、风险和市场预期变化
+- 与标的直接相关的行业、指数、利率、汇率或政策环境
+
+关键事实尽量回到一手来源。网页摘要只能作为线索。没有可靠 OHLCV 时，不编造均线、量比、筹码或精确买卖点。
+
+### 3. 生成决策看板
+
+按以下结构输出：
+
+1. **核心结论**：一句话状态、初步动作倾向、置信度和最重要的原因。
+2. **数据视角**：趋势、价格位置、成交与流动性、相对强弱；不可得字段写“未知”。
+3. **情报视角**：已核验新闻、风险警报、正面催化、下一事件日期和预期差。
+4. **行动计划**：入场或等待条件、失效条件、复盘触发、仓位上限和禁止动作。
+5. **数据缺口**：列出会改变结论但尚未取得的事实。
+
+情绪只使用 `positive`、`mixed`、`negative`、`unknown` 四档，并给出对应事实。不要生成没有可复核输入的数字情绪分。
+
+### 4. 批量与市场复盘
+
+- 批量任务对每只股票使用相同截止日期和字段，先比较证据质量，再比较结论。
+- 市场复盘区分已核验指数数据、行业观察、新闻事实和 agent 判断。
+- 广度、涨跌停数量、资金流或行业排名不可得时，删除该指标或标记未知，不用印象替代。
+
+## 输出与落盘
+
+向 stock picker 返回“Codex 原生日常分析看板”，声明执行模式为 `codex-native`，并列出数据截止日期、关键来源和未知项。未来决策的 `source_skills` 使用 `wealthbrain-daily-stock-analysis`；看板结论归入 agent 判断，不是独立模型证据。
+
+若输出包含新的买入、持有、减仓、卖出、观察或回避判断，最终由 `$wealthbrain-stock-picker` 按落盘契约写入 `wiki/`。不要另外创建重复决策。
+
+## 约束
+
+- 不下单、不连接券商、不维护真实持仓账本。
+- 不发送通知、不建立定时任务，除非用户另行明确要求且使用 WealthBrain 外部的专门流程。
+- 不把单一技术信号、新闻或情绪标签当作充分买入依据。
+- 不因缺少 API key、模型或上游源码而跳过本流程。
