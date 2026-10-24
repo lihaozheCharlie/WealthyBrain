@@ -4,9 +4,9 @@ name: Delta Air Lines
 market: US
 sector: Airlines / Travel / Loyalty
 first_seen: 2026-07-10
-last_reviewed: 2026-07-18
-last_price: 84.17
-last_price_date: 2026-07-17
+last_reviewed: 2026-10-24
+last_price: 76.78
+last_price_date: 2026-10-23
 status: tracking
 ---
 
@@ -31,6 +31,7 @@ status: tracking
 | 日期 | 复盘 | 收益 | 结果 |
 | --- | --- | ---: | --- |
 | 2026-07-18 | [[60-reviews/batch/2026-07-18_ALL_RECOMMENDATIONS_REVIEW|REV-20260718-DAL.US-001]] | -5.43% | 财报好但油价风险上升；等待 |
+| 2026-10-24 | [[60-reviews/batch/2026-10-24_ALL_RECOMMENDATIONS_REVIEW|REV-20261024-DAL.US-001]] | -8.78% | 亏损且跑输；短线窗口已过；观察维持 |
 
 ## 当前投资假设
 

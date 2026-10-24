@@ -4,9 +4,9 @@ name: Broadcom
 market: US
 sector: Semiconductors / AI Infrastructure / Enterprise Software
 first_seen: 2026-07-09
-last_reviewed: 2026-07-18
-last_price: 370.825
-last_price_date: 2026-07-17
+last_reviewed: 2026-10-24
+last_price: 321.68
+last_price_date: 2026-10-23
 status: tracking
 ---
 
@@ -25,7 +25,8 @@ status: tracking
 | --- | --- | --- | ---: | --- |
 | 2026-07-09 | [[40-recommendations/decisions/2026-07-09_AVGO.US_DECISION]] | hold | 389.64 | superseded |
 | 2026-07-10 | [[40-recommendations/decisions/2026-07-10_AVGO.US_DECISION]] | hold | 401.11 | superseded |
-| 2026-07-18 | [[40-recommendations/decisions/2026-07-18_AVGO.US_DECISION]] | hold | 370.83 | open |
+| 2026-07-18 | [[40-recommendations/decisions/2026-07-18_AVGO.US_DECISION]] | hold | 370.83 | superseded |
+| 2026-10-24 | [[40-recommendations/decisions/2026-10-24_AVGO.US_DECISION]] | hold | 321.68 | open |
 
 ## 复盘历史
 
@@ -33,10 +34,11 @@ status: tracking
 | --- | --- | ---: | --- |
 | 2026-07-10 | [[60-reviews/batch/2026-07-10_ALL_RECOMMENDATIONS_REVIEW|REV-20260710-AVGO.US-001]] | 2.94% | 跑赢 SOXX；组合集中度约束不变 |
 | 2026-07-18 | [[60-reviews/batch/2026-07-18_ALL_RECOMMENDATIONS_REVIEW|REV-20260718-AVGO.US-001]] | -7.55% | 相对跑赢半导体；持有不加仓 |
+| 2026-10-24 | [[60-reviews/batch/2026-10-24_ALL_RECOMMENDATIONS_REVIEW|REV-20261024-AVGO.US-001]] | -13.25% | 亏损且跑输SOXX；持有不加仓 |
 
 ## 当前投资假设
 
-定制加速器、网络芯片与 VMware 现金流支持长期价值；组合层面必须先降低单票和 AI 半导体因子集中度。
+持有、不加仓。集中度约束优先于 321.68 美元的回撤。
 
 ## 已沉淀经验
 
