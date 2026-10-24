@@ -4,9 +4,9 @@ name: Cerebras Systems
 market: US
 sector: 半导体 / AI 基础设施
 first_seen: 2026-07-07
-last_reviewed: 2026-07-18
-last_price: 172.86
-last_price_date: 2026-07-17
+last_reviewed: 2026-10-24
+last_price: 110.82
+last_price_date: 2026-10-23
 status: tracking
 ---
 
@@ -34,6 +34,7 @@ status: tracking
 | 2026-07-09 | [[60-reviews/batch/2026-07-09_ALL_RECOMMENDATIONS_REVIEW|REV-20260709-CBRS.US-001]] | 3.19% | 短线转正；仍低于 IPO 价且待 Q2 验证 |
 | 2026-07-10 | [[60-reviews/batch/2026-07-10_ALL_RECOMMENDATIONS_REVIEW|REV-20260710-CBRS.US-001]] | 12.73% | 欧洲 200MW 扩张催化；盈利与客户集中仍待验证 |
 | 2026-07-18 | [[60-reviews/batch/2026-07-18_ALL_RECOMMENDATIONS_REVIEW|REV-20260718-CBRS.US-001]] | -12.93% | 高波动失效；降级观察 |
+| 2026-10-24 | [[60-reviews/batch/2026-10-24_ALL_RECOMMENDATIONS_REVIEW|REV-20261024-CBRS.US-001]] | -35.89% | 大幅亏损；观察维持；本次未重做基本面 |
 
 ## 当前投资假设
 

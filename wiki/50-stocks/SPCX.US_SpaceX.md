@@ -4,9 +4,9 @@ name: SpaceX
 market: US
 sector: 卫星通信 / 商业航天 / AI 基础设施
 first_seen: 2026-07-10
-last_reviewed: 2026-07-18
-last_price: 123.99
-last_price_date: 2026-07-17
+last_reviewed: 2026-10-24
+last_price: 147.49
+last_price_date: 2026-10-23
 status: tracking
 ---
 
@@ -31,6 +31,7 @@ status: tracking
 | 日期 | 复盘 | 收益 | 结果 |
 | --- | --- | ---: | --- |
 | 2026-07-18 | [[60-reviews/batch/2026-07-18_ALL_RECOMMENDATIONS_REVIEW|REV-20260718-SPCX.US-001]] | -18.51% | 高估值代理资产失效；回避 |
+| 2026-10-24 | [[60-reviews/batch/2026-10-24_ALL_RECOMMENDATIONS_REVIEW|REV-20261024-SPCX.US-001]] | 18.95% | 盈利且跑赢；价格回到135上方；回避仍维持 |
 
 ## 当前投资假设
 

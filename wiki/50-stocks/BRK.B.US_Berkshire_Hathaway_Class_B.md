@@ -4,9 +4,9 @@ name: Berkshire Hathaway Class B
 market: US
 sector: Insurance / Conglomerate / Financials
 first_seen: 2026-07-09
-last_reviewed: 2026-07-18
-last_price: 490.91
-last_price_date: 2026-07-17
+last_reviewed: 2026-10-24
+last_price: 542.19
+last_price_date: 2026-10-23
 status: tracking
 ---
 
@@ -25,7 +25,8 @@ status: tracking
 | --- | --- | --- | ---: | --- |
 | 2026-07-09 | [[40-recommendations/decisions/2026-07-09_BRK.B.US_DECISION]] | buy-candidate | 496.03 | superseded |
 | 2026-07-10 | [[40-recommendations/decisions/2026-07-10_BRK.B.US_DECISION]] | buy-candidate | 495.45 | superseded |
-| 2026-07-18 | [[40-recommendations/decisions/2026-07-18_BRK.B.US_DECISION]] | buy-candidate | 490.91 | open |
+| 2026-07-18 | [[40-recommendations/decisions/2026-07-18_BRK.B.US_DECISION]] | buy-candidate | 490.91 | superseded |
+| 2026-10-24 | [[40-recommendations/decisions/2026-10-24_BRK.B.US_DECISION]] | hold | 542.19 | open |
 
 ## 复盘历史
 
@@ -33,10 +34,11 @@ status: tracking
 | --- | --- | ---: | --- |
 | 2026-07-10 | [[60-reviews/batch/2026-07-10_ALL_RECOMMENDATIONS_REVIEW|REV-20260710-BRK.B.US-001]] | -0.12% | 仍在 490-505 买入区；组合角色未变 |
 | 2026-07-18 | [[60-reviews/batch/2026-07-18_ALL_RECOMMENDATIONS_REVIEW|REV-20260718-BRK.B.US-001]] | -0.92% | 防守属性有效；升级候选 |
+| 2026-10-24 | [[60-reviews/batch/2026-10-24_ALL_RECOMMENDATIONS_REVIEW|REV-20261024-BRK.B.US-001]] | 10.45% | 盈利且跑赢；高于520暂停线；新资金暂停 |
 
 ## 当前投资假设
 
-保险浮存金、多元实业、现金与国债提供较低科技相关性和更可控回撤，目标是提高组合韧性而非追最高弹性。
+价格已高于 520 美元暂停线。持有，新资金在 510 美元或以下之前不增加。
 
 ## 已沉淀经验
 

@@ -4,9 +4,9 @@ name: Alphabet Class A
 market: US
 sector: Internet / Advertising / Cloud / AI
 first_seen: 2026-07-09
-last_reviewed: 2026-07-18
-last_price: 346.77
-last_price_date: 2026-07-17
+last_reviewed: 2026-10-24
+last_price: 320.21
+last_price_date: 2026-10-23
 status: tracking
 ---
 
@@ -25,7 +25,8 @@ status: tracking
 | --- | --- | --- | ---: | --- |
 | 2026-07-09 | [[40-recommendations/decisions/2026-07-09_GOOGL.US_DECISION]] | buy-candidate | 356.55 | superseded |
 | 2026-07-10 | [[40-recommendations/decisions/2026-07-10_GOOGL.US_DECISION]] | buy-candidate | 358.89 | superseded |
-| 2026-07-18 | [[40-recommendations/decisions/2026-07-18_GOOGL.US_DECISION]] | buy-candidate | 346.77 | open |
+| 2026-07-18 | [[40-recommendations/decisions/2026-07-18_GOOGL.US_DECISION]] | buy-candidate | 346.77 | superseded |
+| 2026-10-24 | [[40-recommendations/decisions/2026-10-24_GOOGL.US_DECISION]] | watch | 320.21 | open |
 
 ## 复盘历史
 
@@ -33,10 +34,11 @@ status: tracking
 | --- | --- | ---: | --- |
 | 2026-07-10 | [[60-reviews/batch/2026-07-10_ALL_RECOMMENDATIONS_REVIEW|REV-20260710-GOOGL.US-001]] | 0.66% | 略跑输 QQQ；财报前只做首批 |
 | 2026-07-18 | [[60-reviews/batch/2026-07-18_ALL_RECOMMENDATIONS_REVIEW|REV-20260718-GOOGL.US-001]] | -3.38% | 相对稳定；财报前小仓候选 |
+| 2026-10-24 | [[60-reviews/batch/2026-10-24_ALL_RECOMMENDATIONS_REVIEW|REV-20261024-GOOGL.US-001]] | -7.66% | 亏损且跑输；最近两日收盘跌破330 |
 
 ## 当前投资假设
 
-搜索广告、YouTube 和 Cloud 的规模与现金流能覆盖 AI 竞争与资本开支；财报前只允许极小首批，主要仓位等待搜索、Cloud 利润率和 capex 验证。
+2026-10-22 与 2026-10-23 连续收盘跌破 330 美元。重新站上 330 美元之前只观察。
 
 ## 已沉淀经验
 

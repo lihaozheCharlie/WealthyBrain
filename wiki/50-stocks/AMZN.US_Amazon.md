@@ -4,9 +4,9 @@ name: Amazon
 market: US
 sector: E-commerce / Cloud / Advertising / AI Infrastructure
 first_seen: 2026-07-10
-last_reviewed: 2026-07-18
-last_price: 247.23
-last_price_date: 2026-07-17
+last_reviewed: 2026-10-24
+last_price: 248.00
+last_price_date: 2026-10-23
 status: tracking
 ---
 
@@ -24,17 +24,19 @@ status: tracking
 | 日期 | 决策 | 动作 | 参考价 | 状态 |
 | --- | --- | --- | ---: | --- |
 | 2026-07-10 | [[40-recommendations/decisions/2026-07-10_AMZN.US_DECISION]] | buy-candidate | 247.04 | superseded |
-| 2026-07-18 | [[40-recommendations/decisions/2026-07-18_AMZN.US_DECISION]] | watch | 247.23 | open |
+| 2026-07-18 | [[40-recommendations/decisions/2026-07-18_AMZN.US_DECISION]] | watch | 247.23 | superseded |
+| 2026-10-24 | [[40-recommendations/decisions/2026-10-24_AMZN.US_DECISION]] | watch | 248.00 | open |
 
 ## 复盘历史
 
 | 日期 | 复盘 | 收益 | 结果 |
 | --- | --- | ---: | --- |
 | 2026-07-18 | [[60-reviews/batch/2026-07-18_ALL_RECOMMENDATIONS_REVIEW|REV-20260718-AMZN.US-001]] | +0.08% | 绝对持平、相对占优；等待财报 |
+| 2026-10-24 | [[60-reviews/batch/2026-10-24_ALL_RECOMMENDATIONS_REVIEW|REV-20261024-AMZN.US-001]] | 0.31% | 小幅上涨但跑输QQQ；243-246与252均未确认 |
 
 ## 当前投资假设
 
-AWS、广告与零售利润可支撑中期增长；新的买点应建立在大盘企稳和 243-246 美元承接上，而不是沿用已经失效的短线动量条件。
+248 美元仍介于 243-246 与 252 之间，两个入场条件都未出现，继续观察。
 
 ## 已沉淀经验
 
